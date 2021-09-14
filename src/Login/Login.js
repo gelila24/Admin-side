@@ -7,13 +7,11 @@ import TextField from "@material-ui/core/TextField";
 import Paper from "@material-ui/core/Paper";
 import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
-import pl from "../../components/images/login.jpg";
 import { makeStyles } from "@material-ui/core/styles";
 import { Link } from "react-router-dom";
 import "./Login.css";
 import axios from "axios";
 import { useHistory } from "react-router";
-import Navbar from "../../components/GuestNavbar";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -83,19 +81,19 @@ export const Login = () => {
       .then((response) => {
         console.log(response.data);
         localStorage.setItem("token", response.data);
-        history.push(`/Home/${response.data}`);
+        history.push(`//${response.data}`);
       });
   };
 
   return (
     <div style={{ display: "flex", flexDirection: "column" }}>
-      <Navbar />
+
       <Grid container component="main" className={classes.root}>
         <CssBaseline />
         <Grid item xs={false} sm={4} md={7} className={classes.image} />
         <Grid item xs={12} sm={8} md={5} component={Paper} elevation={6} square>
           <div className={classes.paper}>
-            <Avatar className={classes.avatar} alt="pl" src={pl} />
+            <Avatar className={classes.avatar} alt="pl" />
             <Typography component="h1" variant="h5">
               WELCOME
             </Typography>
@@ -142,22 +140,7 @@ export const Login = () => {
                   </Link>
                 </Grid>
               </Grid>
-              <Grid>
-                <Grid item>
-                  <h3>______________OR__________________</h3>
-                </Grid>
-              </Grid>
-              <Button
-                type="submit"
-                fullWidth
-                variant="contained"
-                color="primary"
-                className={classes.submit}
-              >
-                <Link to="/signup" className="link">
-                  Create New Account
-                </Link>
-              </Button>
+
             </form>
           </div>
         </Grid>

@@ -1,0 +1,20 @@
+.home {
+  flex: 9;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+}
+.side {
+  display: flex;
+  height: auto;
+  flex-wrap: wrap; 
+  float: left;
+  margin-left: auto;
+}
+
+.home1 {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-wrap: wrap;
+}

@@ -12,8 +12,8 @@ import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import { Col } from 'reactstrap';
 import Container from '@material-ui/core/Container';
-import Navbar from '../Navbar/Navbar';
-import Sidebar from '../Sidebar/sidebar';
+import Navbar from '../../Navbar/Navbar';
+import Sidebar from '../../Sidebar/sidebar';
 
 const useStyles = makeStyles((theme) => ({
     '@global': {
@@ -113,83 +113,41 @@ export default function RoutineCheck() {
 
     return (
         <div>
-            <React.Fragment>
-                <Navbar />
-                <div className="home1">
-                    <div className="side" > <Sidebar /></div>
-                    <Col sm={4} lg={10}>
-                        <CssBaseline />
-                        <AppBar position="static" color="default" elevation={0} className={classes.appBar}>
+            <Navbar />
+            <div className="home1">
+                <div className="side" > <Sidebar /></div>
+                <div className="home">
+                    <React.Fragment>
 
-                        </AppBar>
-                        {/* Hero unit */}
-                        <Container maxWidth="sm" component="main" className={classes.heroContent}>
-                            <Typography component="h5" variant="h4" align="center" color="textPrimary" gutterBottom>
-                                Recently Active Pharmacies
-                            </Typography>
+                        <Col sm={4} lg={10}>
+                            <CssBaseline />
+                            <AppBar position="static" color="default" elevation={0} className={classes.appBar}>
 
-                        </Container>
-                        <Container maxWidth="md" component="main">
-                            <Grid container spacing={5} alignItems="flex-end">
-                                {active.map((active) => (
-                                    <Grid item key={active.title} xs={12} sm={active.title === 'Pharmacy 1' ? 12 : 6} md={4}>
-                                        <Card>
-                                            <CardHeader
-                                                title={active.title}
-                                                subheader={active.subheader}
-                                                titleTypographyProps={{ align: 'center' }}
-                                                subheaderTypographyProps={{ align: 'center' }}
-                                                action={active.title === 'Prarmacy 1' ? <StarIcon /> : null}
-                                                className={classes.cardHeader}
-                                            />
-                                            <CardContent>
-
-                                                <ul>
-                                                    {active.description.map((line) => (
-                                                        <Typography component="li" variant="subtitle1" align="center" key={line}>
-                                                            {line}
-                                                        </Typography>
-                                                    ))}
-                                                </ul>
-                                            </CardContent>
-                                            <CardActions>
-                                                <Button fullWidth variant={active.buttonVariant} color="primary">
-                                                    {active.buttonText}
-                                                </Button>
-                                            </CardActions>
-                                        </Card>
-                                    </Grid>
-                                ))}
-                            </Grid>
-                        </Container>
-                        {/* Footer */}
-                        <Container maxWidth="md" component="footer" className={classes.footer}>
-
+                            </AppBar>
+                            {/* Hero unit */}
                             <Container maxWidth="sm" component="main" className={classes.heroContent}>
                                 <Typography component="h5" variant="h4" align="center" color="textPrimary" gutterBottom>
-                                    InActive Pharmacies
+                                    Recently Active Pharmacies
                                 </Typography>
 
                             </Container>
-
                             <Container maxWidth="md" component="main">
                                 <Grid container spacing={5} alignItems="flex-end">
-                                    {tiers.map((tier) => (
-                                        // Enterprise card is full width at sm breakpoint
-                                        <Grid item key={tier.title} xs={12} sm={tier.title === 'Pharmacy 4' ? 12 : 6} md={4}>
+                                    {active.map((active) => (
+                                        <Grid item key={active.title} xs={12} sm={active.title === 'Pharmacy 1' ? 12 : 6} md={4}>
                                             <Card>
                                                 <CardHeader
-                                                    title={tier.title}
-                                                    subheader={tier.subheader}
+                                                    title={active.title}
+                                                    subheader={active.subheader}
                                                     titleTypographyProps={{ align: 'center' }}
                                                     subheaderTypographyProps={{ align: 'center' }}
-                                                    action={tier.title === 'Pro' ? <StarIcon /> : null}
+                                                    action={active.title === 'Prarmacy 1' ? <StarIcon /> : null}
                                                     className={classes.cardHeader}
                                                 />
                                                 <CardContent>
 
                                                     <ul>
-                                                        {tier.description.map((line) => (
+                                                        {active.description.map((line) => (
                                                             <Typography component="li" variant="subtitle1" align="center" key={line}>
                                                                 {line}
                                                             </Typography>
@@ -197,8 +155,8 @@ export default function RoutineCheck() {
                                                     </ul>
                                                 </CardContent>
                                                 <CardActions>
-                                                    <Button fullWidth variant={tier.buttonVariant} color="primary">
-                                                        {tier.buttonText}
+                                                    <Button fullWidth variant={active.buttonVariant} color="primary">
+                                                        {active.buttonText}
                                                     </Button>
                                                 </CardActions>
                                             </Card>
@@ -206,13 +164,58 @@ export default function RoutineCheck() {
                                     ))}
                                 </Grid>
                             </Container>
+                            {/* Footer */}
+                            <Container maxWidth="md" component="footer" className={classes.footer}>
+
+                                <Container maxWidth="sm" component="main" className={classes.heroContent}>
+                                    <Typography component="h5" variant="h4" align="center" color="textPrimary" gutterBottom>
+                                        InActive Pharmacies
+                                    </Typography>
+
+                                </Container>
+
+                                <Container maxWidth="md" component="main">
+                                    <Grid container spacing={5} alignItems="flex-end">
+                                        {tiers.map((tier) => (
+                                            // Enterprise card is full width at sm breakpoint
+                                            <Grid item key={tier.title} xs={12} sm={tier.title === 'Pharmacy 4' ? 12 : 6} md={4}>
+                                                <Card>
+                                                    <CardHeader
+                                                        title={tier.title}
+                                                        subheader={tier.subheader}
+                                                        titleTypographyProps={{ align: 'center' }}
+                                                        subheaderTypographyProps={{ align: 'center' }}
+                                                        action={tier.title === 'Pro' ? <StarIcon /> : null}
+                                                        className={classes.cardHeader}
+                                                    />
+                                                    <CardContent>
+
+                                                        <ul>
+                                                            {tier.description.map((line) => (
+                                                                <Typography component="li" variant="subtitle1" align="center" key={line}>
+                                                                    {line}
+                                                                </Typography>
+                                                            ))}
+                                                        </ul>
+                                                    </CardContent>
+                                                    <CardActions>
+                                                        <Button fullWidth variant={tier.buttonVariant} color="primary">
+                                                            {tier.buttonText}
+                                                        </Button>
+                                                    </CardActions>
+                                                </Card>
+                                            </Grid>
+                                        ))}
+                                    </Grid>
+                                </Container>
 
 
-                        </Container>
-                        {/* End footer */}
-                    </Col>
+                            </Container>
+                            {/* End footer */}
+                        </Col>
+                    </React.Fragment>
                 </div>
-            </React.Fragment>
+            </div>
         </div >
     );
 }
