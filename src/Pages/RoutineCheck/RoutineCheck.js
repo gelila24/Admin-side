@@ -155,7 +155,7 @@ export default function RoutineCheck() {
                                                     </ul>
                                                 </CardContent>
                                                 <CardActions>
-                                                    <Button fullWidth variant={active.buttonVariant} color="primary">
+                                                    <Button fullWidth variant={active.buttonVariant} color="#000">
                                                         {active.buttonText}
                                                     </Button>
                                                 </CardActions>
@@ -199,7 +199,7 @@ export default function RoutineCheck() {
                                                         </ul>
                                                     </CardContent>
                                                     <CardActions>
-                                                        <Button fullWidth variant={tier.buttonVariant} color="primary">
+                                                        <Button fullWidth variant={tier.buttonVariant} color="dark">
                                                             {tier.buttonText}
                                                         </Button>
                                                     </CardActions>

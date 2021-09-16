@@ -17,7 +17,7 @@ const Sidebar = () => {
       <CDBSidebar textColor="#000" backgroundColor="rgb(251, 251, 255)">
         <CDBSidebarContent className="sidebar-content">
           <CDBSidebarMenu>
-            <NavLink exact to="/" activeClassName="activeClicked">
+            <NavLink exact to="/home/:id" activeClassName="activeClicked">
               <CDBSidebarMenuItem icon="home">Home</CDBSidebarMenuItem>
             </NavLink>
             <NavLink exact to="/Viewusers" activeClassName="activeClicked">
