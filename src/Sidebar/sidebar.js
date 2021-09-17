@@ -1,4 +1,7 @@
 import React from 'react';
+
+
+import './sidebar.css'
 import {
   CDBSidebar,
   CDBSidebarContent,
@@ -14,10 +17,10 @@ const Sidebar = () => {
     <div
       style={{ display: 'flex', overflow: 'scroll initial', position: 'sticky', borderstyle: "outset", }}
     >
-      <CDBSidebar textColor="#000" backgroundColor="rgb(251, 251, 255)">
+      <CDBSidebar textColor="lightBlue" backgroundColor="#000">
         <CDBSidebarContent className="sidebar-content">
           <CDBSidebarMenu>
-            <NavLink exact to="/home/:id" activeClassName="activeClicked">
+            <NavLink className="sideitem" exact to="/home/:id" activeClassName="activeClicked">
               <CDBSidebarMenuItem icon="home">Home</CDBSidebarMenuItem>
             </NavLink>
             <NavLink exact to="/Viewusers" activeClassName="activeClicked">

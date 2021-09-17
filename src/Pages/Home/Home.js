@@ -42,15 +42,15 @@ const useStyles = makeStyles((theme) => ({
     },
     paper: {
         padding: theme.spacing(2),
-        marginLeft: '15px',
-        maxWidth: '300px',
+        marginLeft: '5px',
+        maxWidth: '200px',
         textAlign: 'center',
-        maxHeight: '220px'
+        maxHeight: '180px'
 
     },
     image: {
         width: 'max-width',
-        height: 128,
+        height: "60px",
         // textAlign: 'center',
         // marginLeft: '40px',
     },
@@ -61,12 +61,16 @@ const useStyles = makeStyles((theme) => ({
         maxWidth: '100%',
         maxHeight: '100%',
     },
+    chart: {
+        width: '600px',
+    }
 }));
 
 function Home() {
     const classes = useStyles();
     const [numbers, setNumbers] = useState({ pharmaCount: 0, adminCount: 0, requestCount: 0 })
     const [data, setData] = useState({
+
         labels: ['Pharmacy Users', 'Admin User', 'New Requests'],
         datasets: [
             {
@@ -104,19 +108,18 @@ function Home() {
                                     <Paper className={classes.paper} item xs={3} style={{ border: '1px solid #000' }}>
                                         <Grid container spacing={2} >
                                             <div className={classes.image} >
-                                                <h3 >Pharmacy Users</h3>
-                                                <br />
+                                                <h4 >Pharmacy Users</h4>
                                                 <Typography >
-                                                    <i class="fa fa-users  fa-6x" aria-hidden="true" ></i>
+                                                    <i class="fa fa-users  fa-4x" aria-hidden="true" ></i>
                                                 </Typography>
                                             </div>
                                         </Grid>
-                                        <br /> <br />
+                                        <br /> <br /><br />
                                         <Grid item xs={12} sm container>
                                             <Grid item xs container direction="column" spacing={2}>
                                                 <Grid item xs>
                                                     <Typography gutterBottom variant="subtitle1">
-                                                        <h3 style={{ textAlign: 'center' }}>{numbers.pharmaCount}</h3>
+                                                        <h4 style={{ textAlign: 'center' }}>{numbers.pharmaCount}</h4>
                                                     </Typography>
                                                 </Grid>
                                             </Grid>
@@ -127,19 +130,18 @@ function Home() {
                                     <Paper className={classes.paper} item xs={3} style={{ border: '1px solid #000' }}>
                                         <Grid container spacing={2}>
                                             <div className={classes.image} style={{ marginLeft: '30px' }}>
-                                                <h3>Admin Users</h3>
-                                                <br />
+                                                <h4>Admin Users</h4>
                                                 <span style={{ color: "#00AADB" }}>
-                                                    <i class="fas fa-user-shield fa-5x"></i>
+                                                    <i class="fas fa-user-shield fa-4x"></i>
                                                 </span>
                                             </div>
                                         </Grid>
-                                        <br /> <br />
+                                        <br /> <br /><br />
                                         <Grid item xs={12} sm container>
                                             <Grid item xs container direction="column" spacing={2}>
                                                 <Grid item xs>
                                                     <Typography gutterBottom variant="subtitle1">
-                                                        <h3 style={{ textAlign: 'center' }}>{numbers.adminCount}</h3>
+                                                        <h4 style={{ textAlign: 'center' }}>{numbers.adminCount}</h4>
                                                     </Typography>
                                                 </Grid>
                                             </Grid>
@@ -151,18 +153,18 @@ function Home() {
                                     <Paper className={classes.paper} style={{ border: '1px solid #000' }}>
                                         <Grid container spacing={2}>
                                             <div className={classes.image}>
-                                                <h3>New Pharmacy Request</h3>
+                                                <h5>New Pharmacy Request</h5>
                                                 <Typography >
                                                     <i class="fa fa-bell fa-4x" aria-hidden="true"></i>
                                                 </Typography>
                                             </div>
                                         </Grid>
-                                        <br /> <br />
+                                        <br /> <br /><br />
                                         <Grid item xs={12} sm container>
                                             <Grid item xs container direction="column" spacing={2}>
                                                 <Grid item xs>
                                                     <Typography gutterBottom variant="subtitle1">
-                                                        <h3 style={{ textAlign: 'center' }}>{numbers.requestCount}</h3>
+                                                        <h5 style={{ textAlign: 'center' }}>{numbers.requestCount}</h5>
                                                     </Typography>
                                                 </Grid>
                                             </Grid>
@@ -172,14 +174,14 @@ function Home() {
                             </Grid>
                         </Col>
                     </div>
-                    <>
+                    <div className='chart'>
                         <Col sm={4} lg={10}>
                             <br /> <br />
                             <Col lg="12">
                                 <Bar data={data} options={options} />
                             </Col>
                         </Col>
-                    </>
+                    </div>
                 </div>
             </div>
         </div>

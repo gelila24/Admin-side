@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { NavLink, useHistory } from 'react-router-dom';
 import "./Navbar.css";
-import img1 from "../images/logo2.png";
+import img1 from "../images/logo.png";
 import ExitToAppIcon from '@material-ui/icons/ExitToApp';
 import Modal from 'react-bootstrap/Modal'
 import { Button } from 'react-bootstrap';
@@ -27,7 +27,7 @@ function Navbar() {
             style={{ marginTop: '0px' }}
           />
           <NavLink exact to="/home/:id" className="nav-logo" style={{ textDecoration: "none" }}>
-            <p style={{ marginTop: "12px", fontSize: "xxx-large", fontFamily: "sans-serif", fontWeight: "700px", marginLeft: "50px", width: "max-content" }}>Pharmacy Locator</p>
+            <p style={{ marginTop: "12px", fontSize: "xxx-large", fontFamily: "sans-serif", fontWeight: "500px", marginLeft: "50px", width: "max-content" }}>Pharmacy Locator</p>
           </NavLink>
           <div className="nav-item">
             <div className="nav-links" onClick={handleShow} style={{ width: "max-content" }}>

@@ -7,19 +7,6 @@ import axios from "axios";
 
 export const ManagePharmacy = () => {
   const [columns] = useState([
-    {
-      title: "Pharmacy ID",
-      field: "pharmacy_id",
-      validate: (rowData) =>
-        rowData.pharmacy_id === "" ? "Name cannot be empty" : "",
-      cellStyle: {
-        backgroundColor: "#fff",
-        color: "#000",
-      },
-      headerStyle: {
-        backgroundColor: "#fff",
-      },
-    },
 
     {
       title: "Pharmacy Name",
@@ -28,7 +15,7 @@ export const ManagePharmacy = () => {
         rowData.pharmacyName === "" ? "Name cannot be empty" : "",
     },
     {
-      title: "Medicine Manufacure Date",
+      title: "Pharmacy Phone No.",
       field: "phoneNumber",
       type: "numeric",
       validate: (rowData) =>
@@ -37,24 +24,15 @@ export const ManagePharmacy = () => {
           : "",
     },
     {
-      title: "Medicine Expire Date",
-      field: "expirationDate",
-      type: "numeric",
-      validate: (rowData) =>
-        rowData.medicine_expireDate < 1900
-          ? "medicine_expireDate must be after 1900"
-          : "",
-    },
-    {
       title: "Pharmacy Type",
       field: "pharmacyType",
     },
     {
-      title: "Tin Number",
+      title: "Pharmacy's Tin No.",
       field: "TIN_number",
     },
     {
-      title: "Email",
+      title: "Pharmacy's Email",
       field: "email",
     },
     {
